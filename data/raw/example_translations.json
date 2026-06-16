@@ -1,0 +1,67 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a professional translator. Translate the following Russian text to English, maintaining the original style and meaning."
+      },
+      {
+        "role": "user",
+        "content": "Привет, как дела?"
+      }
+    ],
+    "completion": " Hello, how are you?"
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a professional translator. Translate the following Russian text to English, maintaining the original style and meaning."
+      },
+      {
+        "role": "user",
+        "content": "Вы когда-нибудь видели более прекрасный закат?"
+      }
+    ],
+    "completion": " Have you ever seen a more beautiful sunset?"
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a professional translator. Translate the following Russian text to English, maintaining the original style and meaning."
+      },
+      {
+        "role": "user",
+        "content": "Это было давно, в далеком прошлом, когда мир был еще молод."
+      }
+    ],
+    "completion": " It was a long time ago, in the distant past, when the world was still young."
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a professional translator. Translate the following Russian text to English, maintaining the original style and meaning."
+      },
+      {
+        "role": "user",
+        "content": "Я не знаю, что это значит."
+      }
+    ],
+    "completion": " I don't know what it means."
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a professional translator. Translate the following Russian text to English, maintaining the original style and meaning."
+      },
+      {
+        "role": "user",
+        "content": "Книга была очень интересной и я не мог оторваться от чтения."
+      }
+    ],
+    "completion": " The book was very interesting and I couldn't put it down."
+  }
+]

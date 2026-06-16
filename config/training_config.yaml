@@ -1,0 +1,22 @@
+# Fine-tuning configuration
+training:
+  dataset_path: "./data/processed/training_data.jsonl"
+  validation_split: 0.2
+  batch_size: 8
+  learning_rate: 0.00002
+  n_epochs: 3
+
+fine_tuning:
+  model: "gpt-4o-mini"
+  suffix: "translation-v1"
+
+validation:
+  min_samples: 5
+  max_samples: 10000
+  required_fields: ["messages", "completion"]
+  max_message_tokens: 4096
+
+inference:
+  temperature: 0.3
+  max_tokens: 2000
+  top_p: 1.0

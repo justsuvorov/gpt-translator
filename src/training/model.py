@@ -1,10 +1,10 @@
-import logging
 import time
 from typing import Any, Dict, Optional
 
 from openai import OpenAI
 
-from ..core.interfaces import ModelTrainer
+from src.core import get_logger
+from src.core.interfaces import ModelTrainer
 
 
 class OpenAIModelTrainer(ModelTrainer):
@@ -15,7 +15,7 @@ class OpenAIModelTrainer(ModelTrainer):
         self.client = OpenAI(api_key=config["openai"]["api_key"])
         self.base_model = config["fine_tuning"]["model"]
         self.suffix = config["fine_tuning"].get("suffix", "translation")
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def start_training(self, data_path: str) -> str:
         """

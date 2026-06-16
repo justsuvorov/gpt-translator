@@ -317,6 +317,22 @@ Features:
 
 ## Logging
 
+Uses **loguru** for advanced logging with structured output.
+
+### Logger Setup
+
+```python
+from src.core import Logger, get_logger
+
+# Configure at app startup
+Logger.configure(log_level="INFO", log_dir="logs")
+
+# Get logger in modules
+logger = get_logger(__name__)
+logger.info("Message")
+logger.error("Error with context")
+```
+
 ### Levels
 - `DEBUG`: Detailed execution flow
 - `INFO`: Important events (default)
@@ -324,10 +340,20 @@ Features:
 - `ERROR`: Failures with context
 
 ### Output
-- Console: Human-readable format
-- Files:
-  - `logs/training.log` - Training events
-  - `logs/translator.log` - Translation app events
+- **Console**: Color-coded human-readable format with timestamps
+- **Files**:
+  - `logs/app.log` - All events with full context
+  - `logs/errors.log` - Errors only for quick debugging
+  - Auto-rotates at 500 MB
+  - Retains for 7 days
+
+### Usage in Code
+
+```python
+logger.info("Starting process")
+logger.warning("Parameter not found, using default")
+logger.error(f"Failed: {exception}")
+logger.debug(f"Variable state: {state}")
 
 ## Testing
 

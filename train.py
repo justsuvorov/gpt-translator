@@ -9,26 +9,11 @@ Usage:
 """
 
 import argparse
-import logging
 import sys
 from pathlib import Path
 
-from src.core import ConfigLoader
+from src.core import ConfigLoader, Logger, get_logger
 from src.training import TrainingPipeline
-
-
-def setup_logging(log_level: str = "INFO") -> None:
-    """Настраивает логирование."""
-    logging.basicConfig(
-        level=getattr(logging, log_level),
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        handlers=[
-            logging.StreamHandler(sys.stdout),
-            logging.FileHandler("logs/training.log", encoding="utf-8"),
-        ],
-    )
-
-    Path("logs").mkdir(exist_ok=True)
 
 
 def main():
@@ -86,9 +71,9 @@ Examples:
 
     args = parser.parse_args()
 
-    # Инициализация
-    setup_logging(args.log_level)
-    logger = logging.getLogger(__name__)
+    # Инициализация логирования
+    Logger.configure(log_level=args.log_level)
+    logger = get_logger(__name__)
 
     try:
         # Загрузка конфигурации

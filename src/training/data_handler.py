@@ -1,10 +1,10 @@
 import json
-import logging
 from pathlib import Path
 from typing import Any, Dict, List
 
-from ..core.interfaces import DataProcessor
-from .validator import TranslationDataValidator
+from src.core import get_logger
+from src.core.interfaces import DataProcessor
+from src.training.validator import TranslationDataValidator
 
 
 class TranslationDataHandler(DataProcessor):
@@ -13,7 +13,7 @@ class TranslationDataHandler(DataProcessor):
     def __init__(self, config: Dict[str, Any]):
         self.config = config
         self.validator = TranslationDataValidator(config)
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def process(self, input_path: str, output_path: str) -> bool:
         """

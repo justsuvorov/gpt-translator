@@ -1,9 +1,9 @@
-import logging
 from typing import Any, Dict, Optional
 
 from openai import OpenAI
 
-from ..core.interfaces import Translator
+from src.core import get_logger
+from src.core.interfaces import Translator
 
 
 class GPTTranslator(Translator):
@@ -13,7 +13,7 @@ class GPTTranslator(Translator):
         self.config = config
         self.client = OpenAI(api_key=config["openai"]["api_key"])
         self.model_id = model_id or config["openai"]["model"]
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def translate(self, text: str, model_id: Optional[str] = None) -> str:
         """

@@ -157,10 +157,27 @@ gpt-translator/
 
 ## Logging
 
+Project uses **loguru** for advanced logging with rotation and retention policies.
+
 Logs are saved to `logs/` directory:
 
-- `logs/training.log`: Fine-tuning process logs
-- `logs/translator.log`: Translation app logs
+- `logs/app.log`: Main application log with all events
+- `logs/errors.log`: Error log for debugging
+- Console output: Color-coded log messages
+
+Log levels:
+- `DEBUG`: Detailed execution flow
+- `INFO`: Important events (default)
+- `WARNING`: Potential issues
+- `ERROR`: Failures with context
+
+Change log level:
+```bash
+python train.py --log-level DEBUG
+python translate.py --log-level INFO
+```
+
+Logs automatically rotate at 500 MB and retain for 7 days.
 
 ## Example Workflow
 

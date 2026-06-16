@@ -7,10 +7,9 @@ Usage:
 """
 
 import json
-import logging
 from pathlib import Path
 
-from src.core import ConfigLoader
+from src.core import ConfigLoader, Logger
 from src.training import TranslationDataValidator, TranslationDataHandler
 
 
@@ -166,7 +165,7 @@ def test_data_handler():
 
 def main():
     """Запуск тестов."""
-    logging.basicConfig(level=logging.WARNING)
+    Logger.configure(log_level="WARNING")
 
     print("\n")
     print("╔" + "=" * 58 + "╗")

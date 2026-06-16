@@ -1,7 +1,8 @@
-import logging
 from typing import Any, Dict
 
 import pyedifice as e
+
+from src.core import get_logger
 
 
 class TranslatorApp:
@@ -10,7 +11,7 @@ class TranslatorApp:
     def __init__(self, translator, config: Dict[str, Any]):
         self.translator = translator
         self.config = config
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def run(self) -> None:
         """Запускает приложение."""

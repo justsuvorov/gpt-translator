@@ -1,8 +1,8 @@
 import json
-import logging
 from typing import Any, Dict, List
 
-from ..core.interfaces import DataValidator
+from src.core import get_logger
+from src.core.interfaces import DataValidator
 
 
 class TranslationDataValidator(DataValidator):
@@ -10,7 +10,7 @@ class TranslationDataValidator(DataValidator):
 
     def __init__(self, config: Dict[str, Any]):
         self.config = config.get("validation", {})
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def validate(self, data: List[Dict[str, Any]]) -> tuple[bool, List[str]]:
         """Валидирует список образцов для обучения."""

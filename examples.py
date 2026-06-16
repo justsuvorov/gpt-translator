@@ -6,19 +6,14 @@ Usage:
     python examples.py
 """
 
-import logging
-
-from src.core import ConfigLoader
+from src.core import ConfigLoader, Logger
 from src.training import TranslationDataHandler, OpenAIModelTrainer, TrainingPipeline
 from src.translator import GPTTranslator
 
 
 def setup_logging():
     """Настраивает логирование."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(message)s",
-    )
+    Logger.configure(log_level="INFO")
 
 
 # ============================================================================

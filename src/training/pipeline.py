@@ -1,9 +1,9 @@
-import logging
 from pathlib import Path
 from typing import Any, Dict
 
-from .data_handler import TranslationDataHandler
-from .model import OpenAIModelTrainer
+from src.core import get_logger
+from src.training.data_handler import TranslationDataHandler
+from src.training.model import OpenAIModelTrainer
 
 
 class TrainingPipeline:
@@ -13,7 +13,7 @@ class TrainingPipeline:
         self.config = config
         self.data_handler = TranslationDataHandler(config)
         self.trainer = OpenAIModelTrainer(config)
-        self.logger = logging.getLogger(__name__)
+        self.logger = get_logger(__name__)
 
     def run(self, data_source: str, wait_for_completion: bool = True) -> str:
         """

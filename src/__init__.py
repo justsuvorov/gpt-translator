@@ -1,3 +1,4 @@
+from src.cli import CLIRunner, TRAINING_COMMAND, TRANSLATION_COMMAND
 from src.core import ConfigLoader, DataProcessor, DataValidator, ModelTrainer, Translator
 from src.training import (
     OpenAIModelTrainer,
@@ -19,5 +20,9 @@ __all__ = [
     "TrainingPipeline",
     "GPTTranslator",
     "TranslatorApp",
+    "CLIRunner",
+    "TRAINING_COMMAND",
+    "TRANSLATION_COMMAND",
 ]
+
 

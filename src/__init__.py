@@ -1,6 +1,11 @@
-from .core import ConfigLoader, DataProcessor, DataValidator, ModelTrainer, Translator
-from .training import OpenAIModelTrainer, TrainingPipeline, TranslationDataHandler, TranslationDataValidator
-from .translator import GPTTranslator, TranslatorApp
+from src.core import ConfigLoader, DataProcessor, DataValidator, ModelTrainer, Translator
+from src.training import (
+    OpenAIModelTrainer,
+    TrainingPipeline,
+    TranslationDataHandler,
+    TranslationDataValidator,
+)
+from src.translator import GPTTranslator, TranslatorApp
 
 __all__ = [
     "ConfigLoader",
@@ -15,3 +20,4 @@ __all__ = [
     "GPTTranslator",
     "TranslatorApp",
 ]
+

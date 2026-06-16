@@ -16,6 +16,9 @@ from src.core import ConfigLoader, Logger, get_logger
 from src.training import TrainingPipeline
 
 
+
+
+
 def main():
     """Основная функция."""
     parser = argparse.ArgumentParser(

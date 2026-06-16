@@ -13,6 +13,9 @@ from src.core import ConfigLoader, Logger
 from src.training import TranslationDataValidator, TranslationDataHandler
 
 
+
+
+
 def test_config_loader():
     """Тест загрузки конфигурации."""
     print("\n" + "=" * 60)

@@ -7,6 +7,9 @@ from src.core import get_logger
 from src.core.interfaces import ModelTrainer
 
 
+
+
+
 class OpenAIModelTrainer(ModelTrainer):
     """Управляет fine-tuning моделей OpenAI."""
 

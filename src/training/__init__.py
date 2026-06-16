@@ -1,7 +1,7 @@
-from .data_handler import TranslationDataHandler
-from .model import OpenAIModelTrainer
-from .pipeline import TrainingPipeline
-from .validator import TranslationDataValidator
+from src.training.data_handler import TranslationDataHandler
+from src.training.model import OpenAIModelTrainer
+from src.training.pipeline import TrainingPipeline
+from src.training.validator import TranslationDataValidator
 
 __all__ = [
     "TranslationDataValidator",
@@ -9,3 +9,4 @@ __all__ = [
     "OpenAIModelTrainer",
     "TrainingPipeline",
 ]
+

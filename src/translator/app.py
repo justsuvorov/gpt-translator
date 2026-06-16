@@ -5,6 +5,9 @@ import pyedifice as e
 from src.core import get_logger
 
 
+
+
+
 class TranslatorApp:
     """PyEdifice приложение для переводчика."""
 

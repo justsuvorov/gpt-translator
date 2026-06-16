@@ -17,6 +17,9 @@ from src.core import ConfigLoader, Logger, get_logger
 from src.translator import GPTTranslator, TranslatorApp
 
 
+
+
+
 def main():
     """Основная функция."""
     parser = argparse.ArgumentParser(

@@ -6,6 +6,9 @@ from src.training.data_handler import TranslationDataHandler
 from src.training.model import OpenAIModelTrainer
 
 
+
+
+
 class TrainingPipeline:
     """Основной pipeline для обучения модели."""
 

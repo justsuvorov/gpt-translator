@@ -5,6 +5,9 @@ from src.core import get_logger
 from src.core.interfaces import DataValidator
 
 
+
+
+
 class TranslationDataValidator(DataValidator):
     """Валидирует данные для обучения переводчика."""
 

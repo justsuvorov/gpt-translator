@@ -1,5 +1,13 @@
 from src.cli import CLIRunner, TRAINING_COMMAND, TRANSLATION_COMMAND
-from src.core import ConfigLoader, DataProcessor, DataValidator, ModelTrainer, Translator
+from src.core import ConfigLoader, DataValidator, ModelTrainer, Translator
+from src.data import DataProcessor, JSONLConverter, JSONLoader
+from src.handlers import (
+    FileTranslationHandler,
+    GUITranslationHandler,
+    TextTranslationHandler,
+    TrainingHandler,
+)
+from src.ml import FineTuner, OpenAIModelProvider
 from src.training import (
     OpenAIModelTrainer,
     TrainingPipeline,
@@ -9,20 +17,36 @@ from src.training import (
 from src.translator import GPTTranslator, TranslatorApp
 
 __all__ = [
+    # Core
     "ConfigLoader",
     "DataValidator",
-    "DataProcessor",
     "ModelTrainer",
     "Translator",
+    # Data
+    "DataProcessor",
+    "JSONLoader",
+    "JSONLConverter",
+    # ML
+    "OpenAIModelProvider",
+    "FineTuner",
+    # Handlers
+    "TrainingHandler",
+    "TextTranslationHandler",
+    "FileTranslationHandler",
+    "GUITranslationHandler",
+    # Translation
+    "GPTTranslator",
+    "TranslatorApp",
+    # Legacy (for backwards compatibility)
     "TranslationDataValidator",
     "TranslationDataHandler",
     "OpenAIModelTrainer",
     "TrainingPipeline",
-    "GPTTranslator",
-    "TranslatorApp",
+    # CLI
     "CLIRunner",
     "TRAINING_COMMAND",
     "TRANSLATION_COMMAND",
 ]
+
 
 

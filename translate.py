@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Translator app entry point для использования переводчика.
+Translator app entry point с composition pattern архитектурой.
 
 Usage:
     python translate.py gui
@@ -15,7 +15,7 @@ import sys
 from src.cli import TRANSLATION_COMMAND, CLIRunner
 
 
-def main():
+def main() -> int:
     """Запускает CLI для перевода."""
     runner = CLIRunner(TRANSLATION_COMMAND, "src.cli.commands")
     return runner.run()

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fine-tuning entry point для обучения модели переводов.
+Fine-tuning entry point с composition pattern архитектурой.
 
 Usage:
     python train.py start --data data/raw/example_translations.json
@@ -14,7 +14,7 @@ import sys
 from src.cli import TRAINING_COMMAND, CLIRunner
 
 
-def main():
+def main() -> int:
     """Запускает CLI для обучения."""
     runner = CLIRunner(TRAINING_COMMAND, "src.cli.commands")
     return runner.run()
